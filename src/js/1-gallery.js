@@ -1,5 +1,4 @@
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css'; 
+console.log('uuu');
 
 
 const images = [
@@ -68,6 +67,15 @@ const images = [
   },
 ];
 
+// Описаний в документації
+/* import SimpleLightbox from "simplelightbox"; */
+// Додатковий імпорт стилів
+/* import "simplelightbox/dist/simple-lightbox.min.css"; */
+
+
+/* import SimpleLightbox from 'simplelightbox/dist/simple-lightbox.esm.js'; // ✅
+
+import 'simplelightbox/dist/simple-lightbox.min.css';  */
 
 const container = document.querySelector('.gallery');
 
@@ -93,8 +101,8 @@ function renderImages() {
     
 renderImages();
 
-const lightbox = new SimpleLightbox('.gallery a', {
+/* const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
-});
-
+}); */
+ 
