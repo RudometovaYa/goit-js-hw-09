@@ -1,6 +1,4 @@
 const form = document.querySelector('.feedback-form');
-const email = form.querySelector('.email');
-const massage = form.querySelector('.message');
 
 const STORAGE_KEY = 'feedback-form-state';
 
@@ -11,10 +9,10 @@ let formData = {
 
 fillTheForm();
 
-form.addEventListener('submit', handelFormSubmit);
-form.addEventListener('input', handelFormlInput);
+form.addEventListener('submit', handleFormSubmit);
+form.addEventListener('input', handleFormlInput);
 
-function handelFormSubmit(event) {
+function handleFormSubmit(event) {
   event.preventDefault();
 
   const form = event.currentTarget;
@@ -23,6 +21,9 @@ function handelFormSubmit(event) {
     alert('Fill please all fields');
     return;
   }
+
+  console.log(formData);
+
   localStorage.removeItem(STORAGE_KEY);
 
   formData = {
@@ -33,7 +34,7 @@ function handelFormSubmit(event) {
   form.reset();
 }
 
-function handelFormlInput(event) {
+function handleFormlInput(event) {
   const { name, value } = event.target;
 
   if (name === 'email' || name === 'message') {
